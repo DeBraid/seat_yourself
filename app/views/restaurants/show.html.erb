@@ -11,6 +11,10 @@
 <%= @restaurant.postal_code %>
 <br/>
 
+<% @restaurant.genres.each do |genre| %>
+Cusine: <%= genre.tag.titleize %>
+<% end %> 
+
 
 <%= link_to("Back to Home Page", restaurants_path) %><br />
 <%= link_to("Edit Product", edit_restaurant_path)  %>

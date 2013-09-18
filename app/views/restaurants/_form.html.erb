@@ -14,5 +14,8 @@
   <%= f.label :postal_code  %>
   <%= f.text_field :postal_code %>
   <br/>
+  <%= f.label :category %>
+  <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+  <br />
   <%= f.submit %>
 <% end %>

@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all 
+    @genres = Genre.all
 
     # if params(genre[:type])
     #   @restaurants = Restaurant.find(params[:genre])
@@ -24,15 +25,13 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-
-     respond_to do |format|
       if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created!'}
+        redirect_to @restaurant
       else
-        format.html { render action: "new" }
+        render "new"
       end
-    end
   end
+
 
   def update
     @restaurant = Restaurant.find(params[:id])
@@ -52,6 +51,6 @@ class RestaurantsController < ApplicationController
 private 
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :postal_code)
+    params.require(:restaurant).permit(:name, :address, :city, :postal_code, :genre_ids)
   end
 end
