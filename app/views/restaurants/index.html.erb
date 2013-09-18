@@ -1,0 +1,14 @@
+<h1> Index View: Restaurants </h1>
+
+
+<% @restaurants.each do |restaurant| %>
+  <br/>
+  <%= restaurant.name  %>
+  <br/>
+  <%= restaurant.address %>
+  <br/>
+  <%= restaurant.city %>
+  <br/>
+  <%= restaurant.postal_code %>
+  <br/>
+<% end %>

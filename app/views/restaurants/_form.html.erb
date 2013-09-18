@@ -1,0 +1,18 @@
+<h1> Form </h1>
+
+<%= form_for(@restaurant) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <br/>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <br/>
+  <%= f.label :postal_code  %>
+  <%= f.text_field :postal_code %>
+  <br/>
+  <%= f.submit %>
+<% end %>

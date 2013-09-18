@@ -18,6 +18,14 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
+
+     respond_to do |format|
+      if @restaurant.save
+        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created!'}
+      else
+        format.html { render action: "new" }
+      end
+    end
   end
 
   def update
