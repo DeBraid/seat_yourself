@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918173225) do
+ActiveRecord::Schema.define(version: 20130918195026) do
+
+  create_table "genres", force: true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres_restaurants", id: false, force: true do |t|
+    t.integer "genre_id"
+    t.integer "restaurant_id"
+  end
 
   create_table "restaurants", force: true do |t|
     t.string   "name"
