@@ -4,11 +4,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all 
     @genres = Genre.all
 
-    # if params(genre[:type])
-    #   @restaurants = Restaurant.find(params[:genre])
-    # else
-    #   render 'index'
-    # end
   end
 
   def show
