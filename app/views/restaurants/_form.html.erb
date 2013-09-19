@@ -26,17 +26,23 @@
 
               <li class="field">
                 <%= f.label :cuisine, for: "res-name", class: "inline" %>
+                <div class="picker">
                  <%= f.collection_select(:genre_ids, Genre.all, :id, :cuisine, :prompt => true) %>
+               </div>
               </li>
               
               <li class="field">
                 <%= f.label :price_range, for: "res-name", class: "inline" %>
-                <%= f.collection_select(:genre_ids, Genre.all, :id, :price_range, :prompt => true) %>
+                <div class="picker">
+                  <%= f.collection_select(:genre_ids, Genre.all, :id, :price_range, :prompt => true) %>
+                </div>
               </li>
 
               <li class="field">
                 <label class="inline" for="res-name"><%= f.label :category %></label>
-                <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+                <div class="picker">
+                  <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+                </div>
               </li>
               <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
           </ul>
