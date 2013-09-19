@@ -14,8 +14,11 @@
   <%= f.label :postal_code  %>
   <%= f.text_field :postal_code %>
   <br/>
-  <%= f.label :category %>
-  <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+  <%= f.label :cuisine %>
+  <%= f.collection_select(:genre_ids, Genre.all, :id, :cuisine, :prompt => true) %>
+  <br />
+  <%= f.label :price_range %>
+  <%= f.collection_select(:genre_ids, Genre.all, :id, :price_range, :prompt => true) %>
   <br />
   <%= f.submit %>
 <% end %>

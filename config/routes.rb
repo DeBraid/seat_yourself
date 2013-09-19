@@ -1,9 +1,7 @@
 SeatYourself::Application.routes.draw do
   resources :restaurants
-  resources :genres 
-
-
-root 'restaurants#index'
+  resources :genres #do we need this?
+  root 'restaurants#index'
 
 
 
