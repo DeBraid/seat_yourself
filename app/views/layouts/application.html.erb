@@ -3,14 +3,16 @@
 <head>
   <title>SeatYourself</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag :modernizr %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
-<%= debug(params) %>
-
+	<div class="row">
+	  <div class="twelve columns">
+	    <%= yield %>
+	  </div>
+	</div>
+	<%= debug(params) %>
 </body>
 </html>

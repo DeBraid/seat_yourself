@@ -1,21 +1,35 @@
-<h1> Form </h1>
+<h2> Add new Restaurant</h2>
 
-<%= form_for(@restaurant) do |f| %>
+  <div class="row">
+    <div class="eight columns">
+      <div class="field">  
+        <%= form_for(@restaurant) do |f| %>
+          <ul>       
+              <li class="field">
+                <%= f.label :name, for: "res-name", class: "inline" %>
+                <%= f.text_field :name, id: "res-name", placeholder: "restaurant name", class: "input" %>
+              </li>
+              <li class="field">
+                <%= f.label :address, for: "res-name", class: "inline"  %>
+                <%= f.text_field :address,  id: "res-name", placeholder: "restaurant address", class: "input" %>
+              </li>
+              <li class="field">
+                <%= f.label :city, for: "res-name", class: "inline"  %>
+                <%= f.text_field :city,  id: "res-name", placeholder: "restaurant city ", class: "input" %>
+              </li>
+              <li class="field">
+                <%= f.label :postal_code, for: "res-name", class: "inline" %>
+                <%= f.text_field :postal_code,  id: "res-name", placeholder: "postal code", class: "input" %>
+              </li>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br/>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <br/>
-  <%= f.label :city %>
-  <%= f.text_field :city %>
-  <br/>
-  <%= f.label :postal_code  %>
-  <%= f.text_field :postal_code %>
-  <br/>
-  <%= f.label :category %>
-  <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
-  <br />
-  <%= f.submit %>
-<% end %>
+              <li class="field">
+                <label class="inline" for="res-name"><%= f.label :category %></label>
+                <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+              </li>
+              <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
+          </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
+

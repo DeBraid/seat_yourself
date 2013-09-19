@@ -8,6 +8,8 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'gumby-framework'
+gem "modernizr-rails"
 
 group :development, :test do 
   gem 'factory_girl'
