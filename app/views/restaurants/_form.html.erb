@@ -9,6 +9,8 @@
                 <%= f.label :name, for: "res-name", class: "inline" %>
                 <%= f.text_field :name, id: "res-name", placeholder: "restaurant name", class: "input" %>
               </li>
+              
+
               <li class="field">
                 <%= f.label :address, for: "res-name", class: "inline"  %>
                 <%= f.text_field :address,  id: "res-name", placeholder: "restaurant address", class: "input" %>
@@ -30,18 +32,11 @@
                  <%= f.collection_select(:genre_ids, Genre.all, :id, :cuisine, :prompt => true) %>
                </div>
               </li>
-              
-              <li class="field">
-                <%= f.label :price_range, for: "res-name", class: "inline" %>
-                <div class="picker">
-                  <%= f.collection_select(:genre_ids, Genre.all, :id, :price_range, :prompt => true) %>
-                </div>
-              </li>
 
               <li class="field">
-                <label class="inline" for="res-name"><%= f.label :category %></label>
+                <label class="inline" for="res-name"><%= f.label :price_range %></label>
                 <div class="picker">
-                  <%= f.collection_select(:genre_ids, Genre.all, :id, :tag, :prompt => true) %>
+                    <%= f.select :price_range, Restaurant.price_ranges, :prompt => true %>
                 </div>
               </li>
               <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>

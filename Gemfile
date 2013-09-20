@@ -6,6 +6,8 @@ gem 'bcrypt-ruby', '~> 3.0.0' #handles hashing the password before its stored in
 gem 'unicorn' #For production, it will run as Rack HTTP Server
 gem 'haml' # My favorite View rendering engine.
 gem 'thin' # Thin as local server instead of default Webrick.
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :assets do
   gem 'sass-rails', '4.0.0'

@@ -1,19 +1,26 @@
 <h1 class="rest_name"><%= @restaurant.name %></h1>
 
 <div class="rest_address">
-<%= @restaurant.address %>
-<br/>
-<%= @restaurant.city %>
-<br/>
-<%= @restaurant.postal_code %>
-<br/>
+  <%= @restaurant.address %>
+  <br/>
+  <%= @restaurant.city %>
+  <br/>
+  <%= @restaurant.postal_code %>
+  <br/>
+  <%= @restaurant.price_range %>
+  <br/>
 </div>
 
 <div class = "rest_tags">
-<% tags = @restaurant.genres.first %>
-Cuisine: <%= tags.cuisine.titleize unless tags.cuisine.nil?%><br/>
-Price Range <%= tags.price_range.titelize unless tags.price_range.nil? %>
+<% genres = @restaurant.genres %>
+<% genres.each do |genre| %>
+
+  Cuisine: 
+    <%= genre.cuisine.titleize unless genre.cuisine.nil? %><br/>
+  Price Range: 
+    <%= genre.price_range.titelize unless genre.price_range.nil? %>
 </div>
+<% end %>
 
 
 <button><%= link_to("Back to Home Page", restaurants_path) %></button>
