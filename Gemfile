@@ -22,7 +22,6 @@ end
   gem 'gumby-framework'
   gem "modernizr-rails"
 
-gem 'protected_attributes'
 
 group :test, :development do
   gem 'sqlite3', '1.3.8' # The database used for development and testing environments.
