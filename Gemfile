@@ -12,13 +12,13 @@ group :assets do
   gem 'uglifier', '2.1.1'
   gem 'coffee-rails', '4.0.0'
   gem 'jbuilder', '1.0.2'
-  gem 'gumby-framework'
-	gem "modernizr-rails"
 end
 
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
-gem "haml-rails"
+  gem 'jquery-rails', '3.0.4'
+  gem 'turbolinks', '1.1.1'
+  gem "haml-rails"
+  gem 'gumby-framework'
+  gem "modernizr-rails"
 
 gem 'protected_attributes'
 
@@ -50,6 +50,6 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 # Use debugger
 # gem 'debugger', group: [:development, :test]

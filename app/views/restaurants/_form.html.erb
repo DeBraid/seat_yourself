@@ -6,6 +6,8 @@
         <%= form_for(@restaurant) do |f| %>
           <ul>       
               <li class="field">
+
+
                 <%= f.label :name, for: "res-name", class: "inline" %>
                 <%= f.text_field :name, id: "res-name", placeholder: "restaurant name", class: "input" %>
               </li>
