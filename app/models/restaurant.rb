@@ -1,5 +1,7 @@
 class Restaurant < ActiveRecord::Base
-  has_and_belongs_to_many :genres
+
+  has_many :genres_restaurants
+  has_many :genres, :through => :genres_restaurants
 
   def self.price_ranges
     %w(Low Medium High)
