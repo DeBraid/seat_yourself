@@ -20,11 +20,12 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-      if @restaurant.save
-        redirect_to @restaurant
-      else
-        render "new"
-      end
+   
+    if @restaurant.save
+      redirect_to @restaurant
+    else
+      render "new"
+    end
   end
 
 

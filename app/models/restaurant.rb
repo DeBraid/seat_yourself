@@ -4,4 +4,5 @@ class Restaurant < ActiveRecord::Base
   def self.price_ranges
     %w(Low Medium High)
   end
+
 end
