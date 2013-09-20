@@ -31,6 +31,10 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
+    #params = {genre_ids = ["", "2"]}
+    params[:genre_ids].each do |genre_id|
+      restaurant.genres << genre_id unless genre_id.blank?
+    end
     if 
       @restaurant.update(restaurant_params)
         redirect_to @restaurant
