@@ -6,3 +6,7 @@ class Create < ActiveRecord::Migration
     end
   end
 end
+
+
+# rails will not creat time stamps when i want to create 
+# has to many relation
