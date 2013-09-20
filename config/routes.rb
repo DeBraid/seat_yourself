@@ -3,7 +3,8 @@ SeatYourself::Application.routes.draw do
   resources :genres #do we need this?
   resources :users
   root 'restaurants#index'
-
+  get 'signup', to: 'users#new', as: 'signup' 
+end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -60,4 +61,4 @@ SeatYourself::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

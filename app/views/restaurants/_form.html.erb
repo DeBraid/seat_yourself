@@ -3,11 +3,9 @@
   <div class="row">
     <div class="eight columns">
       <div class="field">  
-        <%= form_for(@restaurant) do |f| %>
           <ul>       
+            <%= form_for(@restaurant) do |f| %>
               <li class="field">
-
-
                 <%= f.label :name, for: "res-name", class: "inline" %>
                 <%= f.text_field :name, id: "res-name", placeholder: "restaurant name", class: "input" %>
               </li>
@@ -47,8 +45,8 @@
                 </div>
               </li>
               <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
+            <% end %>
           </ul>
-        <% end %>
     </div>
   </div>
 </div>

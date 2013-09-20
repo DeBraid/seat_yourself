@@ -1,18 +1,44 @@
-<h1> All Restaurants </h1>
+<h2> All Restaurants </h2>
 
-
+<div class="navbar row nav1">
+      <a class="toggle" gumby-trigger="#example-nav &gt; .nav1 &gt; ul" href="#"><i class="icon-menu" title=".icon-menu"></i></a>
+      <h1 class="four columns logo">
+        <a href="#">
+          <img src="/img/gumby_mainlogo.png" gumby-retina="">
+        </a>
+      </h1>
+      <ul class="eight columns">
+        <li>
+        	<!-- <a href="#">Features</a> -->
+        	<%= link_to(" Create a Restaurant ", new_restaurant_path) %>
+        </li>
+        <li>
+          <%= link_to(" Create a Restaurant ", new_restaurant_path) %>
+        </li>
+        <li>
+        	<%= link_to(" Create a Restaurant ", new_restaurant_path) %>
+        </li>
+      </ul>
+    </div>
 
 <% @restaurants.each do |restaurant| %>
-<div class="rest_block">
-  <%= link_to(restaurant.name, restaurant)  %>
-  <br/>
-  <%= restaurant.address %>
-  <br/>
-  <%= restaurant.city %>
-  <br/>
-  <%= restaurant.postal_code %>
-  <br/>
-</div>
-<% end %>
+	
+		<div class="row">
 
-<button><%= link_to("Create a Restaurant", new_restaurant_path) %></button>
+	    <div class="five columns">	
+	      <h3><%= link_to(restaurant.name, restaurant)  %></h3>
+	      <p><%= restaurant.address %></p>
+	      <p> <%= restaurant.city %></p>
+	      <p><%= restaurant.postal_code %></p>
+	    </div>
+	 
+	      <div class="seven columns">					
+					<div id="map_canvas">
+						<iframe width="540" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;sll=37.0625,-95.677068&amp;sspn=48.15347,93.076172&amp;ie=UTF8&amp;t=m&amp;ll=43.651975,-79.381714&amp;spn=1.907779,3.515625&amp;z=8&amp;iwloc=A&amp;output=embed">							
+						</iframe>
+					</div>
+	    	</div>
+		</div>
+	<% end %>
+	<%= link_to(" Create a Restaurant ", new_restaurant_path, class: "medium metro rounded btn default") %>
+
