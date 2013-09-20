@@ -7,20 +7,12 @@
   <br/>
   <%= @restaurant.postal_code %>
   <br/>
-  <%= @restaurant.price_range %>
+  Price Range: <%= @restaurant.price_range %>
   <br/>
+  
+  Cuisine type: <%= @restaurant.genres.map{|g| g.cuisine }.inspect %> 
 </div>
 
-<div class = "rest_tags">
-<% genres = @restaurant.genres %>
-<% genres.each do |genre| %>
-
-  Cuisine: 
-    <%= genre.cuisine.titleize unless genre.cuisine.nil? %><br/>
-  Price Range: 
-    <%= restaurant.price_range.titelize unless restaurant.price_range.nil? %>
-</div>
-<% end %>
 
 
 <button><%= link_to("Back to Home Page", restaurants_path) %></button>
