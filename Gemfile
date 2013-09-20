@@ -39,6 +39,7 @@ group :test, :development do
   gem 'spork'
   gem 'growl', '1.0.3'
   gem 'faker', '1.1.2'
+  gem 'debugger'
 end
 
 group :doc do
@@ -53,4 +54,4 @@ end
 
 gem 'therubyracer', platforms: :ruby
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+# , group: [:development, :test]
