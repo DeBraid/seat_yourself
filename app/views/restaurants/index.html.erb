@@ -2,22 +2,17 @@
 
 <% @restaurants.each do |restaurant| %>
 	
-		<div class="row">
+		<div class="restaurant_wrapper">
 
-	    <div class="five columns">	
+	    <div class="seven columns">	
 	      <h3><%= link_to(restaurant.name, restaurant)  %></h3>
-	      <p><%= restaurant.address %></p>
+	<!--       <p><%= restaurant.address %></p>
 	      <p> <%= restaurant.city %></p>
-	      <p><%= restaurant.postal_code %></p>
+	      <p><%= restaurant.postal_code %></p> -->
 	    </div>
 	 
-	      <div class="seven columns">					
-					<div id="map_canvas">
-						<iframe width="540" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;sll=37.0625,-95.677068&amp;sspn=48.15347,93.076172&amp;ie=UTF8&amp;t=m&amp;ll=43.651975,-79.381714&amp;spn=1.907779,3.515625&amp;z=8&amp;iwloc=A&amp;output=embed">							
-						</iframe>
-					</div>
-	    	</div>
 		</div>
 	<% end %>
-	<%= link_to(" Create a Restaurant ", new_restaurant_path, class: "medium metro rounded btn default") %>
-
+	<div class="bottombar" style="min-width:100%; background-color:grey; position: absolute; top:100%">
+	<button><%= link_to(" Create a Restaurant ", new_restaurant_path )%></button>
+	</div>
