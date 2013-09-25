@@ -26,19 +26,7 @@
                 <%= f.text_field :postal_code,  id: "res-name", placeholder: "postal code", class: "input" %>
               </li>
 
-              <li class="field">
-                <%= f.label :cuisine, for: "res-name", class: "inline" %>
-                <div class="picker">
-                 <%= f.collection_select(:genre_ids, Genre.all, :id, :cuisine, {:prompt => true} ) %>
-               </div>
-              </li>
-
-              <li class="field">
-                <label class="inline" for="res-name"><%= f.label :price_range %></label>
-                <div class="picker">
-                    <%= f.select :price_range, Restaurant.price_ranges, :prompt => true %>
-                </div>
-              </li>
+          
               <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
             <% end %>
           </ul>
