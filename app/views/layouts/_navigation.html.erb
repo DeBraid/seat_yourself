@@ -6,10 +6,17 @@
       </h1>
       <ul class="eight columns">
         <li>
-          <%= link_to(" Sign Up ", new_user_path) %>
+        	<%= link_to("Create a Restaurant ", new_restaurant_path) %>
         </li>
         <li>
-        	<%= link_to(" Create a Restaurant ", new_restaurant_path) %>
+        <li>
+          <%= link_to("Sign Up ", new_user_path) %>
         </li>
+          <% if current_user.nil? %>
+          <%= link_to("Log In", "/login") %>
+          <% else %>
+          <li style="color:yellow;"><%= current_user.email %></li>
+          <%= link_to("Log Out", session_path("current"), :method => :delete ) %>
+          <% end %>
       </ul>
     </div>

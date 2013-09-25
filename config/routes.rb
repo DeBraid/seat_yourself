@@ -1,11 +1,12 @@
 SeatYourself::Application.routes.draw do
   
   resources :restaurants
-  resources :genres #do we need this?
-  resources :users
+  resources :users, :except => [:index]
+  resources :sessions, :only => [:new, :create, :destroy]
 
   root 'restaurants#index'
   get 'signup', to: 'users#new', as: 'signup' 
+  get 'login', to: 'sessions#new', as: 'login'
 end
 
 
