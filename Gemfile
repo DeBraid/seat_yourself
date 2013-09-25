@@ -14,6 +14,7 @@ group :assets do
   gem 'uglifier', '2.1.1'
   gem 'coffee-rails', '4.0.0'
   gem 'jbuilder', '1.0.2'
+
 end
 
   gem 'jquery-rails', '3.0.4'
@@ -21,6 +22,7 @@ end
   gem "haml-rails"
   gem 'gumby-framework'
   gem "modernizr-rails"
+  gem 'jquery-ui-rails'
 
 
 group :test, :development do
