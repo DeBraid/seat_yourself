@@ -1,3 +1,12 @@
 <h1>User Profile</h1>
 
 <%= @user.email %>
+
+<% unless @user.reservations.nil?  %>
+  <% @user.reservations.each do |reservation| %>
+      <div class = "reservation_block">
+      <%= reservation.restaurant.name %>
+      <%= reservation.notes %>
+      </div>
+  <% end %>
+<% end %>

@@ -26,7 +26,7 @@ end
 group :test, :development do
   gem 'sqlite3', '1.3.8' # The database used for development and testing environments.
   gem 'rspec-rails', '2.13.1' # RSpec as default testing framework.
-  gem 'pry' # Using as default Interactive Ruby console instead of irb. Needs some configuration to be hooked as rails console.
+  # gem 'pry' # Using as default Interactive Ruby console instead of irb. Needs some configuration to be hooked as rails console.
   gem 'factory_girl_rails', '4.2.0' # The testing factory framework, used instead of the default Fixtures.
   gem 'database_cleaner', '<1.1.0' # Used to speed-up tests, in my case to encapsulate the tests into db transaction.
   gem 'awesome_print' #Used by Pry to pretty prints Ruby objects in full color exposing their internal structure with proper indentation.

@@ -1,8 +1,12 @@
 SeatYourself::Application.routes.draw do
   
-  resources :restaurants
+  resources :restaurants do
+    resources :reservations, :only => [:create]
+  end
+
   resources :users, :except => [:index]
   resources :sessions, :only => [:new, :create, :destroy]
+
 
   root 'restaurants#index'
   get 'signup', to: 'users#new', as: 'signup' 

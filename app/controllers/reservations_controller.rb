@@ -1,21 +1,22 @@
 class ReservationsController < ApplicationController
 
-   def edit
-    @user = User.find(params[:id])
+ def create
+
+  @restaurant=Restaurant.find(params[:restaurant_id])
+  @reservation = Reservation.create(reservation_params)
+  @reservation.user_id=current_user.id
+  @reservation.restaurant_id=@restaurant.id
+  if @reservation.save
+    redirect_to @restaurant
+  else
+    render "/restaurants/show", :id=>@restaurant.id
   end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
-    else
-      render :edit
-    end
-  end
+ end
+ 
+ private
 
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-  end
-  
+ def reservation_params
+   params.require(:reservation).permit(:notes, :user_id, :reserved_time, :party_size) 
+ end 
 end

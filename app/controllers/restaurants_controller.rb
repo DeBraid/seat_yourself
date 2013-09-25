@@ -3,11 +3,11 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all 
     @genres = Genre.all
-
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reservation = Reservation.new(:restaurant_id=>@restaurant.id)
   end
 
   def edit
