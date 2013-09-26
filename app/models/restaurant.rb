@@ -3,6 +3,7 @@ class Restaurant < ActiveRecord::Base
   # has_many :genres_restaurants
   # has_many :genres, :through => :genres_restaurants
   has_many :reservations
+  mount_uploader :restaurant_picture
 
   # def self.price_ranges
   #   %w(Low Medium High)

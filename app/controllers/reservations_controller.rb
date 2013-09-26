@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   @reservation.user_id=current_user.id
   @reservation.restaurant_id=@restaurant.id
   if @reservation.save
-    redirect_to @restaurant
+    redirect_to current_user
   else
     render "/restaurants/show", :id=>@restaurant.id
   end

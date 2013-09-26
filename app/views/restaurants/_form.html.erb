@@ -1,33 +1,34 @@
 <h2> Add new Restaurant</h2>
 
   <div class="row">
-    <div class="eight columns">
+    <div class="ten columns">
       <div class="field">  
           <ul>       
             <%= form_for(@restaurant) do |f| %>
-              <li class="field">
+      
                 <%= f.label :name, for: "res-name", class: "inline" %>
                 <%= f.text_field :name, id: "res-name", placeholder: "restaurant name", class: "input" %>
-              </li>
-              
-
-              <li class="field">
+                <br><br>
                 <%= f.label :address, for: "res-name", class: "inline"  %>
                 <%= f.text_field :address,  id: "res-name", placeholder: "restaurant address", class: "input" %>
-              </li>
-
-              <li class="field">
+                <br><br>
                 <%= f.label :city, for: "res-name", class: "inline"  %>
                 <%= f.text_field :city,  id: "res-name", placeholder: "restaurant city ", class: "input" %>
-              </li>
-
-              <li class="field">
+                <br><br>
                 <%= f.label :postal_code, for: "res-name", class: "inline" %>
-                <%= f.text_field :postal_code,  id: "res-name", placeholder: "postal code", class: "input" %>
-              </li>
-
-          
-              <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
+                <%= f.text_field :postal_code, id: "res-name", placeholder: "postal code", class: "input" %>
+                <br><br>
+                <%= f.label "Upload an Image" %>
+                <%= f.file_field :restaurant_picture %>
+                <br><br>
+                <div class="five columns">
+                <%= f.label :price_range %>
+                <%= f.select :price_range, options_for_select(["$", "$$", "$$$", "$$$$", "$$$$$",]) %>
+                </div>
+                
+                <br>
+                <div class="ten columns">
+                <%= f.submit class: "medium metro rounded btn default", type: "submit"  %>
             <% end %>
           </ul>
     </div>

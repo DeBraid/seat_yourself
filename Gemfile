@@ -8,6 +8,7 @@ gem 'haml' # My favorite View rendering engine.
 gem 'thin' # Thin as local server instead of default Webrick.
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails', '4.0.0'
