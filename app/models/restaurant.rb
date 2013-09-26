@@ -4,6 +4,7 @@ class Restaurant < ActiveRecord::Base
   # has_many :genres, :through => :genres_restaurants
   has_many :reservations
   mount_uploader :restaurant_picture
+  validates :postal_code, :price_range, presence: true
 
   # def self.price_ranges
   #   %w(Low Medium High)

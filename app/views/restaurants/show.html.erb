@@ -1,15 +1,15 @@
 <h1 class="rest_name"><%= @restaurant.name %></h1>
 
-<div class="five columns">
-  <%= @restaurant.address %>
-  <br/>
-  <%= @restaurant.city %>
-  <br/>
-  <%= @restaurant.postal_code %>
-  <br/>
-  Price Range: <%= @restaurant.price_range %>
-  <br/>
+<div id="modal_edit_form" style="display:none">
+<%= render "form" %>
 </div>
+
+<div class="five columns">
+
+  <%= render "address" %>  
+
+</div>
+
 <div class="six columns">
   <%= image_tag @restaurant.restaurant_picture if @restaurant.restaurant_picture? %>
 </div>
@@ -37,4 +37,24 @@
 
 
 <button><%= link_to("Back to Home Page", restaurants_path) %></button>
-<button><%= link_to("Edit Product", edit_restaurant_path(@restaurant) )  %></button>
+<button id="editbutton"><%= link_to("Edit Restaurant", edit_restaurant_path(@restaurant) )  %></button>
+<script>
+
+$('#reservation_reserved_day').datepicker({
+  dateFormat: 'MM dd'
+});
+
+$('#editbutton').on('click', function(e) {
+  e.preventDefault();
+  $("#modal_edit_form").dialog({
+      autoOpen: true,
+      height: 600,
+      width: 600,
+      modal: true,
+      title: 'Edit Restaurant'
+  });
+});
+
+
+
+</script>

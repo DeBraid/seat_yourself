@@ -2,6 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-jQuery ->
-  $('#reservation_reserved_day').datepicker
-    dateFormat: 'MM dd'
+$ -> 
+  $(".edit_restaurant").on "ajax:success", (e, data, status, xhr) ->
+    unless data.errors?
+      $("#restaurant_info").html(data)
+      return $("#modal_edit_form").dialog( "close" )
+    html = ""
+    html += "<p>#{err}</p>" for err in data.errors
+    $(@).find(".errors").html html
+
+# $("#modal_edit_form").dialog( "close" ) ;
+#      $("#restaurant_info").html("<%= j render 'address' %>")

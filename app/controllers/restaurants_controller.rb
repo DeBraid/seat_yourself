@@ -8,6 +8,10 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @reservation = Reservation.new(:restaurant_id=>@restaurant.id)
+    respond_to do |format|
+      format.html
+      format.js {}
+    end
   end
 
   def edit
@@ -37,9 +41,10 @@ class RestaurantsController < ApplicationController
     # end
     if 
       @restaurant.update(restaurant_params)
-        redirect_to @restaurant
+        render partial: "address"
+        # redirect_to @restaurant
     else
-      render 'edit'
+      render json:{errors:@restaurant.errors.full_messages}
     end
   end
 
