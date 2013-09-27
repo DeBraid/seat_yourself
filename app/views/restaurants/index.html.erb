@@ -18,6 +18,12 @@
 					</div>
 	    	</div>
 		</div>
+
+		<%= link_to " Edit ", edit_restaurant_path(:id), class: "medium metro rounded btn default" %>
+		
+		<%= link_to " Delete ", @restaurant, :confirm => "Are you sure you want to delete this restaurant?",:method => :delete %>
+
+	
 	<% end %>
 	<%= link_to(" Create a Restaurant ", new_restaurant_path, class: "medium metro rounded btn default") %>
 

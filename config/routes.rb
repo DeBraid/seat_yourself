@@ -5,6 +5,7 @@ SeatYourself::Application.routes.draw do
   resources :users
 
   root 'restaurants#index'
+
   get 'signup', to: 'users#new', as: 'signup' 
 end
 

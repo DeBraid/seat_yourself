@@ -12,29 +12,29 @@
               
 
               <li class="field">
-                <%= f.label :address, for: "res-name", class: "inline"  %>
-                <%= f.text_field :address,  id: "res-name", placeholder: "restaurant address", class: "input" %>
+                <%= f.label :address, for: "res-address", class: "inline"  %>
+                <%= f.text_field :address,  id: "res-address", placeholder: "restaurant address", class: "input" %>
               </li>
 
               <li class="field">
-                <%= f.label :city, for: "res-name", class: "inline"  %>
-                <%= f.text_field :city,  id: "res-name", placeholder: "restaurant city ", class: "input" %>
+                <%= f.label :city, for: "res-city", class: "inline"  %>
+                <%= f.text_field :city,  id: "res-city", placeholder: "restaurant city ", class: "input" %>
               </li>
 
               <li class="field">
-                <%= f.label :postal_code, for: "res-name", class: "inline" %>
-                <%= f.text_field :postal_code,  id: "res-name", placeholder: "postal code", class: "input" %>
+                <%= f.label :postal_code, for: "res-postal_code", class: "inline" %>
+                <%= f.text_field :postal_code,  id: "res-postal_code", placeholder: "postal code", class: "input" %>
               </li>
 
               <li class="field">
-                <%= f.label :cuisine, for: "res-name", class: "inline" %>
+                <%= f.label :cuisine, class: "inline" %>
                 <div class="picker">
                  <%= f.collection_select(:genre_ids, Genre.all, :id, :cuisine, :prompt => true) %>
                </div>
               </li>
 
               <li class="field">
-                <label class="inline" for="res-name"><%= f.label :price_range %></label>
+                <label class="inline"><%= f.label :price_range %></label>
                 <div class="picker">
                     <%= f.select :price_range, Restaurant.price_ranges, :prompt => true %>
                 </div>
