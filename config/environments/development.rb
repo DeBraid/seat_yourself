@@ -28,8 +28,7 @@ SeatYourself::Application.configure do
   config.assets.debug = true
 
   silence_warnings do
-  require 'pry'
-  IRB = Pry
+
 end
 
 end

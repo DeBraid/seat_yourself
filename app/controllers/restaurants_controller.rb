@@ -3,11 +3,15 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all 
     @genres = Genre.all
-
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reservation = Reservation.new(:restaurant_id=>@restaurant.id)
+    respond_to do |format|
+      format.html
+      format.js {}
+    end
   end
 
   def edit
@@ -30,11 +34,16 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
+    #params = {genre_ids = ["", "2"]}
+    # params[:genre_ids].each do |genre_id|
+    #   restaurant.genres << genre_id unless genre_id.blank?
+    # end
     if 
       @restaurant.update(restaurant_params)
-        redirect_to @restaurant
+        render partial: "address"
+        # redirect_to @restaurant
     else
-      render 'edit'
+      render json:{errors:@restaurant.errors.full_messages}
     end
   end
 
@@ -46,6 +55,6 @@ class RestaurantsController < ApplicationController
 private 
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :city, :postal_code, :genre_ids, :price_range)
+    params.require(:restaurant).permit(:name, :address, :city, :postal_code, :genre_ids, :price_range, :restaurant_picture)
   end
 end

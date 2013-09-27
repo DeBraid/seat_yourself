@@ -1,0 +1,9 @@
+<h1>Index View for Users</h1>
+
+Eventually admin only view
+
+<ul>
+<% @users.each do |user| %>
+<li><%= link_to(user.email,user) %></li>
+<% end %>
+</ul>

@@ -1,5 +1,24 @@
+<<<<<<< HEAD
 <h2>Account Information</h2>
 
 <p> Your name: <strong><%= @user.full_name %></strong></p>
 <p>Your email: <strong><%= @user.email %></strong></p>
   
+=======
+<h1>User Profile</h1>
+
+<%= @user.email %>
+
+<h2>Your Reservations</h2>
+<% unless @user.reservations.nil?  %>
+  <% @user.reservations.each do |reservation| %>
+      <div class = "reservation_block" style="padding:10px">
+      <%= link_to(reservation.restaurant.name, reservation.restaurant) %>
+      <br>Party Size: <%= reservation.party_size %>
+      <br>Day: <%= "#{Time.now.month} #{reservation.reserved_day}" %>
+      <br>Time: <%= reservation.reserved_time.hour %>
+      <% unless reservation.notes.empty? %><br>Notes:<br><%= reservation.notes %><% end %>
+      </div>
+  <% end %>
+<% end %>
+>>>>>>> 74039c72f6a19f7261bc706af67ea3f42a2ac45f

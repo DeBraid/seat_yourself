@@ -8,12 +8,14 @@ gem 'haml' # My favorite View rendering engine.
 gem 'thin' # Thin as local server instead of default Webrick.
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'carrierwave'
 
 group :assets do
   gem 'sass-rails', '4.0.0'
   gem 'uglifier', '2.1.1'
   gem 'coffee-rails', '4.0.0'
   gem 'jbuilder', '1.0.2'
+
 end
 
   gem 'jquery-rails', '3.0.4'
@@ -21,12 +23,13 @@ end
   gem "haml-rails"
   gem 'gumby-framework'
   gem "modernizr-rails"
+  gem 'jquery-ui-rails'
 
 
 group :test, :development do
   gem 'sqlite3', '1.3.8' # The database used for development and testing environments.
   gem 'rspec-rails', '2.13.1' # RSpec as default testing framework.
-  gem 'pry' # Using as default Interactive Ruby console instead of irb. Needs some configuration to be hooked as rails console.
+  # gem 'pry' # Using as default Interactive Ruby console instead of irb. Needs some configuration to be hooked as rails console.
   gem 'factory_girl_rails', '4.2.0' # The testing factory framework, used instead of the default Fixtures.
   gem 'database_cleaner', '<1.1.0' # Used to speed-up tests, in my case to encapsulate the tests into db transaction.
   gem 'awesome_print' #Used by Pry to pretty prints Ruby objects in full color exposing their internal structure with proper indentation.
@@ -39,6 +42,7 @@ group :test, :development do
   gem 'spork'
   gem 'growl', '1.0.3'
   gem 'faker', '1.1.2'
+  gem 'debugger'
 end
 
 group :doc do
@@ -53,4 +57,4 @@ end
 
 gem 'therubyracer', platforms: :ruby
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+# , group: [:development, :test]

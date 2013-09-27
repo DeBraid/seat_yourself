@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //= require modernizr
-//= require gumby
-//= require ui/gumby.checkbox
-//= require ui/gumby.radiobtn
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.ui.all
+//= require gumby
+//= require ui/gumby.checkbox
+//= require ui/gumby.radiobtn
 //= require_tree .
+
+

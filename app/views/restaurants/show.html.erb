@@ -1,27 +1,60 @@
 <h1 class="rest_name"><%= @restaurant.name %></h1>
 
-<div class="rest_address">
-  <%= @restaurant.address %>
-  <br/>
-  <%= @restaurant.city %>
-  <br/>
-  <%= @restaurant.postal_code %>
-  <br/>
-  <%= @restaurant.price_range %>
-  <br/>
+<div id="modal_edit_form" style="display:none">
+<%= render "form" %>
 </div>
 
-<div class = "rest_tags">
-<% genres = @restaurant.genres %>
-<% genres.each do |genre| %>
+<div class="five columns">
 
-  Cuisine: 
-    <%= genre.cuisine.titleize unless genre.cuisine.nil? %><br/>
-  Price Range: 
-    <%= restaurant.price_range.titelize unless restaurant.price_range.nil? %>
+  <%= render "address" %>  
+
 </div>
+
+<div class="six columns">
+  <%= image_tag @restaurant.restaurant_picture if @restaurant.restaurant_picture? %>
+</div>
+</div>
+
+<% if current_user.nil? %>
+  <%= link_to("You must login to create a reservation", new_session_path) %>
+<% else %>
+  <%= render "/shared/errors", :object_type=>@reservation %>
+  <div class="reservation_form">
+  <%= form_for [@restaurant, @reservation] do |f| %>
+  <%= f.label "Party Size" %>
+  <%= f.select("party_size", (1..10).map {|i| [ "#{i} people", i ] }) %>
+  <%= f.label "Reservation Day" %>
+  <%= f.text_field :reserved_day %>
+  <%= f.label "Reservation Time" %>
+  <%= f.select("reserved_time", @restaurant.time_slots) %>
+  <%= f.label "Notes" %>
+  <%= f.text_area :notes %>
+  <%= f.submit %>
+  <% end %>
+  </div>
 <% end %>
 
 
+
 <button><%= link_to("Back to Home Page", restaurants_path) %></button>
-<button><%= link_to("Edit Product", edit_restaurant_path)  %></button>
+<button id="editbutton"><%= link_to("Edit Restaurant", edit_restaurant_path(@restaurant) )  %></button>
+<script>
+
+$('#reservation_reserved_day').datepicker({
+  dateFormat: 'MM dd'
+});
+
+$('#editbutton').on('click', function(e) {
+  e.preventDefault();
+  $("#modal_edit_form").dialog({
+      autoOpen: true,
+      height: 600,
+      width: 600,
+      modal: true,
+      title: 'Edit Restaurant'
+  });
+});
+
+
+
+</script>

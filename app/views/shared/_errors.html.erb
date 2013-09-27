@@ -1,0 +1,12 @@
+<% unless object_type.errors.empty? %>
+
+<div id ="errorblock">
+  <%= pluralize(object_type.errors.count, "error") %> prevented this from being saved 
+  <ul>
+    <% object_type.errors.full_messages.each do |error| %>
+      <li class="errormessage"> <%= error %> </li>
+    <% end %>
+  </ul>
+</div>
+
+<% end %>
